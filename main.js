@@ -83,12 +83,3 @@ function fecha() {
 }
 
 document.getElementById('head-fecha').innerHTML += fecha();
-
-document.getElementById('api').addEventListener
-('click', getApi)
-
-function  getApi(){
-  fetch('db.json')
-   .then(resp => resp.json())
-   .then(data => console.log(data.posts))
-}
