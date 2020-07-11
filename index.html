@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMatt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class='app'>
+
+        <div class="nav-bar">
+            <div class="nav-logo">
+                CodeMatt
+            </div>
+            <div class="nav-social">
+                <a href="https://instagram.com/matiassalicru" target="_blank"><img src="./img/insta.png" alt="instagram" srcset=""></a>
+                <a href="https://www.linkedin.com/in/matias-salicru/" target="_blank"><img src="./img/li.png" alt="LinkedIn" srcset=""></a>
+                <a href="https://twitter.com/MattiiasSalicru" target="_blank"><img src="./img/tw.png" alt="Web" srcset=""></a>
+            </div>
+        </div>
+
+        
+        <div class="head-container">
+            <div class="head-title">codeMatt</div>
+            <div class="head-description">Welcome this is my english blog that I would use for practice some writing</div>
+            <div id='head-fecha'> La fechad de hoy es: </div>                
+            <div class='line'></div>
+        </div>
+
+        <form id="addPost" class='app-form'>
+            <input type="text" id="title" class='form-input' placeholder="Title">
+            <input type="text" id="subtitle" class='form-input' placeholder='Subtitle'>
+            <textarea id="text" cols="30" rows="5" class='form-textarea' placeholder="What's on your mind?"></textarea>
+            <input type="submit" id='posting' value="Post" class='form-btn'>
+        </form>
+        
+        <article id='post'class='post-container'></article>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
