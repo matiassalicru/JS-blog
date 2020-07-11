@@ -13,8 +13,8 @@
 
 .nav-bar{
     display: flex;
-    margin: auto;
     height: 50px;
+    margin: auto;
     justify-content: space-around;
     align-items: center;
     background-color: #f3f3f3;

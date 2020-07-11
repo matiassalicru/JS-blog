@@ -1,10 +1,10 @@
 //Trayendo el json al JS
-fetch('data.json')
+fetch('db.json')
   .then(resp => resp.json())
   .then(data => {
     let postTemplate = '';
     //Ciclo para recorrer cada uno de los post que existen en el Json.
-    data.forEach(post =>{ 
+    data.posts.forEach(post =>{ 
       postTemplate += `
         <div class='post'>
             <h1 class='post-titulo'>
@@ -36,10 +36,10 @@ function addPost(e){
   let subtitle = document.getElementById('subtitle').value;
   let text = document.getElementById('text').value;
 
-  fetch('data.json', {
-    method: "post",
+  fetch("http://localhost:3000/posts", {
+    method: "POST",
     headers: {
-      'Accept': "application/json, text/plain, */*",
+      Accept: "application/json, text/plain, */*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ title: title, subtitle: subtitle, text: text }),
@@ -83,3 +83,12 @@ function fecha() {
 }
 
 document.getElementById('head-fecha').innerHTML += fecha();
+
+document.getElementById('api').addEventListener
+('click', getApi)
+
+function  getApi(){
+  fetch('db.json')
+   .then(resp => resp.json())
+   .then(data => console.log(data.posts))
+}

@@ -1,30 +1,32 @@
-[
-    {
-    "id": 1,
-    "title": "Hello World",
-    "subtitle": "This is my last post",
-    "text": "Hey hello everyone this is my first post, I don't know what to say and how to make more post re-using the Component Post, so that is what I need to learn to do by tomorrow.",
-    "date": "12/06/2020 - 10:50 hs"
-    },
-    {
-    "id": 2,
-    "title": "it's been a couple days",
-    "subtitle": "Still struggling",
-    "text": "Well, as I said, it's been a couple days where I couldn't find a way to set the date as I wanted to, so... I'm typping it manually for now, until I discover how to do it, I got a function where I can see the date especifically even when I can just see the clock of my PC but well, that was for the sake of programming some stuff meanwhile. ",
-    "date": "14/06/2020 - 10:54 hs"
-    },
-    {
-    "id": 3,
-    "title": "Personal",
-    "subtitle": "Just to get clear",
-    "text": "I will use this blog for posting what I need, even if that is about programming stuff, or personal things like feelings and all that kind of things, beware I need to get distressed sometimes and as a 'public' place to it, I will use it for that, I know I am talking to myself right now but well, someday I will be very happy to set all this into an online thing, hope to happen as soon as possible",
-    "date": "14/06/2020 - 11:23 hs"
-    },
-    {
-    "id": 4,
-    "title": "Learning-new things",
-    "subtitle": "Some changes in here",
-    "text": "Just learning a days ago how to make re-usables 'components' with plain JavaScript, something that I wanted to learn since I kinda begin with programming, it's been a lot harder that the one time when I don't know how to link a CSS file, haha! To summarize I change all the blog to a JavaScript plain with HTML and CSS page, I'm not using React anymore for this blog for now, I have a lot to learn yet from JavaScript so do I.",
-    "date": "17/6/2020 - 11:16 hs"
-    }
-]
+{
+    "posts": [
+        {
+        "id": 1,
+        "title": "Hello World",
+        "subtitle": "This is my last post",
+        "text": "Hey hello everyone this is my first post, I don't know what to say and how to make more post re-using the Component Post, so that is what I need to learn to do by tomorrow.",
+        "date": "12/06/2020 - 10:50 hs"
+        },
+        {
+        "id": 2,
+        "title": "it's been a couple days",
+        "subtitle": "Still struggling",
+        "text": "Well, as I said, it's been a couple days where I couldn't find a way to set the date as I wanted to, so... I'm typping it manually for now, until I discover how to do it, I got a function where I can see the date especifically even when I can just see the clock of my PC but well, that was for the sake of programming some stuff meanwhile. ",
+        "date": "14/06/2020 - 10:54 hs"
+        },
+        {
+        "id": 3,
+        "title": "Personal",
+        "subtitle": "Just to get clear",
+        "text": "I will use this blog for posting what I need, even if that is about programming stuff, or personal things like feelings and all that kind of things, beware I need to get distressed sometimes and as a 'public' place to it, I will use it for that, I know I am talking to myself right now but well, someday I will be very happy to set all this into an online thing, hope to happen as soon as possible",
+        "date": "14/06/2020 - 11:23 hs"
+        },
+        {
+        "id": 4,
+        "title": "Learning-new things",
+        "subtitle": "Some changes in here",
+        "text": "Just learning a days ago how to make re-usables 'components' with plain JavaScript, something that I wanted to learn since I kinda begin with programming, it's been a lot harder that the one time when I don't know how to link a CSS file, haha! To summarize I change all the blog to a JavaScript plain with HTML and CSS page, I'm not using React anymore for this blog for now, I have a lot to learn yet from JavaScript so do I.",
+        "date": "17/6/2020 - 11:16 hs"
+        }
+    ]
+}
