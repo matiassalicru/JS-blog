@@ -42,7 +42,7 @@ function addPost(e){
       Accept: "application/json, text/plain, */*",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ title: title, subtitle: subtitle, text: text }),
+    body: JSON.stringify({ title: title, subtitle: subtitle, text: text , date: fecha()}),
   })
     .then((resp) => resp.json())
     .then((data) => {
