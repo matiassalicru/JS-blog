@@ -36,19 +36,22 @@ function addPost(e){
   let subtitle = document.getElementById('subtitle').value;
   let text = document.getElementById('text').value;
 
-  fetch("http://localhost:3000/posts", {
-    method: "POST",
-    headers: {
-      Accept: "application/json, text/plain, */*",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ title: title, subtitle: subtitle, text: text , date: fecha()}),
-  })
-    .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data);
-    });
-    
+  if(title === '' || text === ''){
+    alert('Please enter a Title and a Text to post')
+  } else {
+    fetch("http://localhost:3000/posts", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title: title, subtitle: subtitle, text: text , date: fecha()}),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
 }
 
 
@@ -62,6 +65,20 @@ function template(posts){
       )}
   `
 };
+
+
+document.getElementById('app-post-btn').addEventListener('click', showForm);
+
+const form = document.getElementById('addPost');
+
+function showForm() {
+  if(form.style.display==='flex'){
+    form.style.display='none';
+  } else if(form.style.display!='flex') {
+    form.style.display='flex';
+  }
+  console.log('click')
+}
 
 const date = new Date();
 const day = date.getDate().toString();

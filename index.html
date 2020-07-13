@@ -12,7 +12,7 @@
     <header>
         <div class="nav-bar">
             <div class="nav-logo">
-                CodeMatt
+                CodeBlogMatt
             </div>
             <div class="nav-social">
                 <a href="https://instagram.com/matiassalicru" target="_blank"><img src="./img/insta.png" alt="instagram" srcset=""></a>
@@ -33,11 +33,14 @@
         
         <label class="labeling">Place your thoughts down here!</label>
 
+        <button id='app-post-btn' class="post-btn">New post!</button>
+        <div id="form"></div>
+
         <form id="addPost" class='app-form'>
             <label class='form-label'>
                 Title
             </label>
-            <input type="text" id="title" class='form-input' placeholder="Title">
+            <input type="text" id="title" class='form-input' placeholder="Title" required> 
             <label for="" class="form-label">
                 Subtitle
             </label>
@@ -47,7 +50,7 @@
             </label>
             <textarea id="text" cols="30" rows="5" class='form-textarea' placeholder="What's on your mind?"></textarea>
             <input type="submit" id='posting' value="Post" class='form-btn'>
-        </form>
+          </form>
         
         <article id='post'class='post-container'></article>
 
