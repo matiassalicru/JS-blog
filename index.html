@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeMatt</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/ba23f537b7.js" crossorigin="anonymous"></script></head>
 <body>
 
@@ -27,15 +27,24 @@
         <div class="head-container">
             <div class="head-title">codeMatt</div>
             <div class="head-description"><i class="far fa-save icon"></i>Welcome, this is my english blog that I'll use for practicing some writing</div>
-            <div id='head-fecha'> La fechad de hoy es: </div>                
+            <div id='head-fecha'> Today is: </div>                
             <div class='line'></div>
         </div>
         
         <label class="labeling">Place your thoughts down here!</label>
 
         <form id="addPost" class='app-form'>
+            <label class='form-label'>
+                Title
+            </label>
             <input type="text" id="title" class='form-input' placeholder="Title">
+            <label for="" class="form-label">
+                Subtitle
+            </label>
             <input type="text" id="subtitle" class='form-input' placeholder='Subtitle'>
+            <label class="form-label">
+                What are you thinking about?
+            </label>
             <textarea id="text" cols="30" rows="5" class='form-textarea' placeholder="What's on your mind?"></textarea>
             <input type="submit" id='posting' value="Post" class='form-btn'>
         </form>
