@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&family=Snippet&family=Sriracha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Baloo+Chettan+2&family=Baloo+Thambi+2:wght@400;600&family=Snippet&display=swap');
 
+@font-face{
+    font-family: piola1;
+    src: url(./Fonts/EBGaramond-Italic-VariableFont_wght.ttf);
+    font-weight: 500;
+    font-style: italic;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -187,7 +194,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: cursive;
+    font-family: piola1;
     text-align: center;
     font-size: 17px;
     font-style: italic;
