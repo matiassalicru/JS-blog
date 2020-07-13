@@ -3,7 +3,7 @@ fetch('db.json')
   .then(resp => resp.json())
   .then(data => {
     let postTemplate = '';
-    //Ciclo para recorrer cada uno de los post que existen en el Json.
+    //Ciclo para recorrer y   mostrar cada uno de los post que existen en el Json.
     data.posts.forEach(post =>{ 
       postTemplate += `
         <div class='post'>
@@ -17,7 +17,7 @@ fetch('db.json')
                 ${post.text}
             </div>
             <div class='post-fecha'>
-                ${post.date}
+                Posted at: ${post.date}
             </div>
         </div>
     `;
