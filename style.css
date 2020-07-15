@@ -209,7 +209,7 @@
     align-items: center;
     margin-top: 20px;
     padding: 20px;
-    background-color: rgb(240, 254, 255);
+    background-color: rgba(240, 254, 255, 0.459);
 }
 
 @keyframes mobile {
