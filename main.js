@@ -37,7 +37,8 @@ function addPost(e){
   let text = document.getElementById('text').value;
 
   if(title === '' || text === ''){
-    alert('Please enter a Title and a Text to post')
+    document.getElementById('input-error').innerText = 'Please enter a Title and a Text to post';
+    return;
   } else {
     fetch("http://localhost:3000/posts", {
       method: "POST",
@@ -51,6 +52,15 @@ function addPost(e){
       .then((data) => {
         console.log(data);
       });
+  }
+}
+
+function inputError(){
+  const input = document.getElementById('title').value;
+  const output = document.getElementById('input-error');
+
+  if(input === ''){
+    output.innerHTML = 'Please write a title for your post';
   }
 }
 
