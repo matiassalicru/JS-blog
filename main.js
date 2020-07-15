@@ -29,6 +29,8 @@ fetch('db.json')
 document.getElementById('posting').addEventListener
 ('click', addPost)
 
+const output = document.getElementById('input-error');
+
 function addPost(e){
   e.preventDefault();
 
@@ -37,7 +39,11 @@ function addPost(e){
   let text = document.getElementById('text').value;
 
   if(title === '' || text === ''){
-    document.getElementById('input-error').innerText = 'Please enter a Title and a Text to post';
+    output.innerText = 'Please enter a Title and a Text to post';
+
+    setTimeout(() => {
+      output.style.display = 'none';
+    }, 3000);
     return;
   } else {
     fetch("http://localhost:3000/posts", {
@@ -55,16 +61,6 @@ function addPost(e){
   }
 }
 
-function inputError(){
-  const input = document.getElementById('title').value;
-  const output = document.getElementById('input-error');
-
-  if(input === ''){
-    output.innerHTML = 'Please write a title for your post';
-  }
-}
-
-
 function template(posts){
   return `
       ${post(
@@ -77,17 +73,21 @@ function template(posts){
 };
 
 
-document.getElementById('app-post-btn').addEventListener('click', showForm);
+const newPost = document.getElementById('app-post-btn');
+newPost.innerText= 'New post!';
+
+newPost.addEventListener('click', showForm);
 
 const form = document.getElementById('addPost');
 
 function showForm() {
   if(form.style.display==='flex'){
     form.style.display='none';
+    newPost.innerText= 'New post!';
   } else if(form.style.display!='flex') {
     form.style.display='flex';
+    newPost.innerText= 'Cancel';
   }
-  console.log('click')
 }
 
 const date = new Date();

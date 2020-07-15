@@ -68,6 +68,8 @@
     margin: auto;
     padding: 10px;
     margin-top: 20px;
+    font-family: piola1;
+    font-weight: lighter;
     background: none;
     outline: none;
     border: 1px solid #9e9e9e;
@@ -97,6 +99,7 @@
     margin-top: 40px;
     text-align: justify;
     border: 1px solid #45454525;
+    border-radius: 20px;
     padding: 40px;
     box-shadow: 5px 5px 8px 5px #45454545;
 }
@@ -110,6 +113,7 @@
     font-size: 20px;
     margin-top: 5px;
     margin-bottom: 15px;
+    font-style: italic;
 }
 
 .post .post-texto{
@@ -201,6 +205,12 @@
     font-size: 17px;
     font-style: italic;
     margin-top: 20px;
+}
+
+.error-message{
+    color: tomato;
+    font-size: 10px;
+    font-style: italic;
 }
 
 .app-footer{

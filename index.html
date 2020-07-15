@@ -33,23 +33,23 @@
         
         <label class="labeling">Place your thoughts down here!</label>
 
-        <button id='app-post-btn' class="post-btn">New post!</button>
+        <button id='app-post-btn' class="post-btn"></button>
         <div id="form"></div>
 
         <form id="addPost" class='app-form'>
             <label class='form-label'>
                 Title
             </label>
-            <input type="text" id="title" class='form-input' placeholder="Title" required> 
+            <input type="text" id="title" class='form-input' placeholder="Title" required autocomplete="off">
             <label for="" class="form-label">
                 Subtitle
             </label>
-            <input type="text" id="subtitle" class='form-input' placeholder='Subtitle'>
+            <input type="text" id="subtitle" class='form-input' placeholder='Subtitle' autocomplete='off'>
             <label class="form-label">
                 What are you thinking about?
             </label>
-            <textarea id="text" cols="30" rows="5" class='form-textarea' placeholder="What's on your mind?"></textarea>
-            <p id='input-error'></p>
+            <textarea id="text" cols="30" rows="5" class='form-textarea' placeholder="What's on your mind?" autocomplete="off"></textarea>
+            <p id='input-error' class='error-message'></p>
             <input type="submit" id='posting' value="Post" class='form-btn'>
           </form>
         
