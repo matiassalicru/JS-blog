@@ -203,6 +203,14 @@
     margin-top: 20px;
 }
 
+.app-footer{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgb(240, 254, 255);
+}
 
 @keyframes mobile {
     0% {
