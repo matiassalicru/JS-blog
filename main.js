@@ -1,10 +1,10 @@
 //Trayendo el json al JS
-fetch('db.json')
-  .then(resp => resp.json())
-  .then(data => {
-    let postTemplate = '';
+fetch("db.json")
+  .then((resp) => resp.json())
+  .then((data) => {
+    let postTemplate = "";
     //Ciclo para recorrer y   mostrar cada uno de los post que existen en el Json.
-    data.posts.forEach(post =>{ 
+    data.forEach((post) => {
       postTemplate += `
         <div class='post'>
             <h1 class='post-titulo'>
@@ -21,72 +21,95 @@ fetch('db.json')
             </div>
         </div>
     `;
-    })
-    document.getElementById('post').innerHTML= postTemplate; //imprimiendo la variable postTemplate
-  })
+    });
+    document.getElementById("post").innerHTML = postTemplate; //imprimiendo la variable postTemplate
+  });
 
+function showPost(data) {
+  let postTemplate;
+  data.forEach((post) => {
+    postTemplate += `
+        <div class='post'>
+            <h1 class='post-titulo'>
+                ${post.title}
+            </h1>
+            <div class='post-subtitulo'>
+                ${post.subtitle}
+            </div>
+            <div class='post-texto'>
+                ${post.text}
+            </div>
+            <div class='post-fecha'>
+                Posted at: ${post.date}
+            </div>
+        </div>
+    `;
+  });
+  document.getElementById("post").innerHTML = postTemplate; //imprimiendo la variable postTemplate
+}
 
-document.getElementById('posting').addEventListener
-('click', addPost)
+document.getElementById("addPost").addEventListener("submit", addPost);
 
-const output = document.getElementById('input-error');
+const output = document.getElementById("input-error");
 
-function addPost(e){
+function addPost(e) {
   e.preventDefault();
 
-  let title = document.getElementById('title').value;
-  let subtitle = document.getElementById('subtitle').value;
-  let text = document.getElementById('text').value;
+  let title = document.getElementById("title");
+  let subtitle = document.getElementById("subtitle");
+  let text = document.getElementById("text");
 
-  if(title === '' || text === ''){
-    output.innerText = 'Please enter a Title and a Text to post';
+  if (title === "" || text === "") {
+    output.innerText = "Please enter a Title and a Text to post";
 
     setTimeout(() => {
-      output.style.display = 'none';
+      output.style.display = "none";
     }, 3000);
     return;
   } else {
-    fetch("http://localhost:3000/posts", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ title: title, subtitle: subtitle, text: text , date: fecha()}),
-    })
+    console.log("Post enviado");
+
+    fetch("db.json")
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
+        const newPost = {
+          title: title.value,
+          subtitle: subtitle.value,
+          text: text.value,
+          date: fecha(),
+        };
+
+        data = [...data, newPost];
+        showPost(data)
+
       });
+      
+      // title.value = '';
+      // subtitle.value ='';
+      // text.value = '';
   }
 }
 
-function template(posts){
+function template(posts) {
   return `
-      ${post(
-        posts.title,
-        posts.subtitle,
-        posts.text,
-        posts.date
-      )}
-  `
-};
+      ${post(posts.title, posts.subtitle, posts.text, posts.date)}
+  `;
+}
 
+const newPost = document.getElementById("app-post-btn");
+newPost.innerText = "New post!";
 
-const newPost = document.getElementById('app-post-btn');
-newPost.innerText= 'New post!';
+newPost.addEventListener("click", showForm);
 
-newPost.addEventListener('click', showForm);
-
-const form = document.getElementById('addPost');
+const form = document.getElementById("addPost");
 
 function showForm() {
-  if(form.style.display==='flex'){
-    form.style.display='none';
-    newPost.innerText= 'New post!';
-  } else if(form.style.display!='flex') {
-    form.style.display='flex';
-    newPost.innerText= 'Cancel';
+  if (form.style.display === "flex") {
+    form.style.display = "none";
+    newPost.innerText = "New post!";
+  } else if (form.style.display != "flex") {
+    form.style.display = "flex";
+    newPost.innerText = "Cancel";
   }
 }
 
@@ -106,7 +129,7 @@ function minuto() {
 }
 
 function fecha() {
-  return (day + "/" + month + "/" + year + "  -  " + hours + ":" + minuto());
+  return day + "/" + month + "/" + year + "  -  " + hours + ":" + minuto();
 }
 
-document.getElementById('head-fecha').innerHTML += fecha();
+document.getElementById("head-fecha").innerHTML += fecha();
